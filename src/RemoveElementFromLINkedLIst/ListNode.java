@@ -1,6 +1,8 @@
 package RemoveElementFromLINkedLIst;
 
 public class ListNode {
+
+    ListNode head;
    int val;
      ListNode next;
     ListNode() {}
@@ -8,33 +10,14 @@ public class ListNode {
     ListNode(int val) { this.val = val; }
       ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 
-    class Solution {
-        public ListNode removeElements(ListNode head, int val) {
+    public  void addFirst(int val){
+        ListNode newNode = new ListNode( val);
 
-            if(head == null){
-                return null;
-            }
+            newNode.next = head;
 
 
-            ListNode dummy = new ListNode();
-            dummy.next = head;
-
-            ListNode currNode = dummy;
-
-            while(currNode.next != null){
-                if(currNode.next.val == val){
-                    currNode.next = currNode.next.next;
-                }else{
-                    currNode = currNode.next;
-                }
-
-            }
-
-
-
-
-            return dummy.next;
-        }
     }
+
+
 
 }
